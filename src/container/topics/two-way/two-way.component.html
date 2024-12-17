@@ -1,0 +1,76 @@
+<h1><strong>Two-Way Binding</strong></h1>
+<p>Two-way data binding in Angular allows data to flow in both directions between the view and the component class. This means that users can make changes to the data using the UI, and the data will automatically update the view. 
+  <br>The ngModel directive is commonly used to implement two-way data binding in Angular. This directive binds the values of HTML controls, such as input, select, and textarea, to a variable in the controller's scope.</p>
+
+
+
+<p>Two-way binding lets data flow both ways:</p>
+<ul>
+  <li> From the text box to your code.</li>
+  <li>From your code back to the text box.</li>
+  <p> </p>
+  <div>
+  <input  type=text [(ngModel)]= "username" placeholder="Enter your name" />
+    <p>Your name is: {{ username }}</p>
+  </div>
+</ul>
+
+
+
+<h4><strong>Two-Way Binding with a Number Input</strong></h4>
+<h3>Age Example</h3>
+<input type="number" [(ngModel)]="age" />
+<p>Your age is: {{ age }}</p>
+
+
+
+<h4><strong>Two-Way Binding with a Checkbox</strong></h4>
+<h3>Checkbox Example</h3>
+<input type="checkbox" [(ngModel)]="isSubscribed" />
+<p>Subscription Status: {{ isSubscribed ? 'Subscribed' : 'Not Subscribed' }}</p>
+
+
+
+<h4><strong>Two-Way Binding with a Dropdown List</strong></h4>
+<h3>Dropdown Example</h3>
+<select [(ngModel)]="selectedColor">
+  <option value="Red">Red</option>
+  <option value="Green">Green</option>
+  <option value="Blue">Blue</option>
+</select>
+<p>Your favorite color is: {{ selectedColor }}</p>
+
+
+
+<h4><strong>Two-Way Binding with a Text Area</strong></h4>
+<h3>Text Area Example</h3>
+<textarea [(ngModel)]="feedback" rows="3" placeholder="Enter your feedback"></textarea>
+<p>Your Feedback: {{ feedback }}</p>
+
+
+<h4><strong>Two-Way Binding with Radio Buttons</strong></h4>
+<h3>Radio Button Example</h3>
+<label>
+  <input type="radio" [(ngModel)]="gender" value="Male" /> Male
+</label>
+<label>
+  <input type="radio" [(ngModel)]="gender" value="Female" /> Female
+</label>
+<p>Your selected gender is: {{ gender }}</p>
+
+
+<div class="signal"></div>
+<h1><strong>signal</strong></h1>
+<p>A Signal is like a container that holds a value. When the value changes, any part of the application that depends on the signal is automatically updated.</p>
+<p>It’s similar to variables, but reactive—it notifies components and views when the value changes.
+   </p>
+   <h2><strong>Key Features of Signals</strong></h2>
+   <ul>
+    <li><strong>Reactive:</strong><br>Signals automatically update when their value changes.</li>
+    <li><strong>Simple API</strong><br>Easy to create, read, and update signals.</li>
+    <li><strong>Efficient:</strong><br>Signals work seamlessly with Angular's change detection.</li>
+    <li><strong>Computed Signals:</strong><br>You can derive new values reactively based on existing signals.</li>
+    <li><strong>Effect:</strong><br>Run side-effects automatically when a signal changes.
+    </li>
+    
+   </ul>

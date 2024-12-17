@@ -1,0 +1,124 @@
+<h1><strong>One-way DataBinding</strong></h1>
+<p>
+  Imagine you have a whiteboard where you write some information. People can see
+  what you’ve written, but they cannot write back on the board or change it. The
+  information flows in one direction only, from you (the app) to the whiteboard
+  (the screen).
+</p>
+<div>
+  <h4>Example:</h4>
+  <p></p>
+  <ul>
+    <li>You (the app) write: "Hello, John" on the whiteboard.</li>
+    <li>Everyone sees "Hello, John" on the whiteboard.</li>
+    <li>
+      If you decide to change it to "Hello, Alice," the whiteboard updates
+      automatically.
+    </li>
+    <li>
+      But if someone tries to change "Alice" to "Mark" on the whiteboard, they
+      cannot do it, because they only see the data and can't send it back to
+      you.
+    </li>
+  </ul>
+</div>
+
+<div class="Interpolation">
+  <h3>{{ message }}</h3>
+  <h2>{{ topic1 }}</h2>
+  <p>we initialized message in T.S file and calling in html file.</p>
+  <p>
+    these display simple and ensures that the user can only see or interact with
+    the data without altering the app’s internal state.
+  </p>
+
+  <div class="limitation">
+    <h2><strong>limitation</strong></h2>
+    <div>
+      <h3>Example: A Stock Market Ticker</h3>
+      <p>
+        A stock ticker app shows the current price of a company’s stock:
+        $100.50.
+        <li>The app’s logic updates the stock price whenever it changes.</li>
+        <li>
+          You can see the updated price, but you can’t type directly on the
+          screen to change it.
+        </li>
+      </p>
+    </div>
+  </div>
+  <div class="property Binding"></div>
+  <h1><strong>property Binding /Attribute Binding</strong></h1>
+  <p>
+    property binding in Angular is like connecting the app's data (or logic) to
+    the HTML element's property. It allows you to dynamically set values for
+    HTML properties based on the app’s logic. Think of it as feeding data from
+    your app to an HTML element's attribute or property.
+  </p>
+  <div class="work">
+    <h5>How Does It Work?</h5>
+    <p>
+      In Angular, property binding uses square brackets [] to bind a property of
+      an HTML element to a value from your app’s component.
+    </p>
+    <ul>
+      <li>
+        property refers to the HTML element’s property (like src, disabled,
+        value, etc.).
+      </li>
+      <li>expression is the value or logic from the Angular component.</li>
+    </ul>
+    <div class="image">
+      <img [src]="PicUrl" alt="image" />
+    </div>
+  </div>
+
+  <div class="Event Binding"></div>
+  <h1><strong>Event Binding</strong></h1>
+  <p>
+    Event binding type is when information flows from the view to the component
+    when an event is triggered. The event could be a mouse click or keypress.
+    The view sends the data to update the component.
+  </p>
+
+  <p>
+    Unsurprisingly, it is the exact opposite of property binding, where the data
+    goes from the component to the view.
+  </p>
+  <p></p>
+  <ul>
+    <li>Clicking a button</li>
+    <li>Typing in a text box</li>
+    <li>Hovering over something with a mouse</li>
+  </ul>
+  <p>
+    Event Binding is how Angular connects these actions (events) to your code so
+    you can decide what happens next
+  </p>
+  <div class="examples">
+    <h3><strong>Click Event</strong></h3>
+    <p>
+      Let’s say you have a button. When someone clicks the button, you want a
+      message to appear.
+    </p>
+    <button (click)="showMessage()">Click Me!</button>
+    <h6><strong>What happens:</strong></h6>
+    <ul>
+      <li>The user clicks the button.</li>
+      <li>Angular sees the click event and runs the showMessage() method.</li>
+      <li>
+        The method shows an alert box saying, “Hello! You clicked the button.”
+      </li>
+    </ul>
+    <h6><strong> Typing in a Text Box</strong></h6>
+    <input
+      type="text"
+      (input)="onTyping($event)"
+      placeholder="Type something..."
+    />
+    <p>You typed: {{ typedValue }}</p>
+    <h6><strong>Hovering over an Element</strong></h6>
+    <!-- <div (onHover)="onHover()" (onnotHover)="onend()">hover here</div> -->
+    <div (mouseenter)="onHover()" (mouseleave)="onLeave()"><button>onHover!</button></div>
+  </div>
+</div>
